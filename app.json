@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "expo-white-label-app",
+    "slug": "expo-white-label-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
