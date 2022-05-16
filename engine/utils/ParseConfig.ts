@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
 import path from 'path';
-import { IConfig } from '../types/IConfig';
+import { IConfig } from '../commands/interfaces/IConfig';
 
 function validateConfig(config: IConfig) {
     const validateField = (fieldName: string, field: string | string[]) => {

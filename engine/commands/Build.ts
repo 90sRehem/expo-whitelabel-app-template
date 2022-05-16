@@ -5,7 +5,7 @@ import { InstallDependencies } from "tasks/InstallDependencies";
 import { SetIcon } from "tasks/SetIcon";
 import { SetId } from "tasks/SetId";
 import { SetName } from "tasks/SetName";
-import { IConfig } from "types/IConfig";
+import { IConfig } from "./interfaces/IConfig";
 
 export function Build(config: IConfig, dirSrc: string, dirDst: string) {
     Copydirectory(dirSrc, dirDst);
