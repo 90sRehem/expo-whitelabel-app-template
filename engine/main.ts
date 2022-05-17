@@ -1,5 +1,5 @@
 import { Command } from 'commander';
-import { Build } from './commands';
+import { Builder } from './commands';
 import { parseConfig } from './utils';
 
 const commander = new Command();
@@ -28,7 +28,8 @@ commander
             return;
         }
         const config = parseConfig(configPath);
-        Build(config, source, destination);
+        const builder = new Builder(config, source, destination);
+        builder.Build();
     });
 
 commander.parse(process.argv);

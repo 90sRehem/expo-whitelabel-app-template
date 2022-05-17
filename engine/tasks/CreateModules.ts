@@ -1,11 +1,10 @@
-import fs from 'fs-extra';
+import { fsExtra } from '../libs';
 import { ITask } from './interfaces/ITask';
 /**
- * Função que cria o arquivo de ponto de entrada da pasta modules.
+ * Classe responsável por criar o arquivo de ponto de entrada da pasta modules.
  * @description Cria o index.ts que exporta os modulos referentes ao app.
  * @property {string} dirDst - Recebe uma string com o endereço que aponta para o diretório de destino. 
  * @property {string} modules - Recebe um array de strings contendo o nome dos módulos.
- * @method Execute - Cria o arquivo index no diretório de destino.
 */
 export class CreateModules implements ITask {
     private readonly _dirDst: string;
@@ -15,7 +14,9 @@ export class CreateModules implements ITask {
         this._dirDst = dirDst;
         this._modules = modules;
     }
-
+    /**
+     * @method Execute - Cria o arquivo index no diretório de destino.
+     */
     Execute(): void {
         console.log(`Write ${this._dirDst}/src/modules/index.ts`);
         const fileContent = `\
@@ -24,7 +25,7 @@ ${this._modules.map((module: string) => `import ${module} from './${module}';`).
 
 export default [${this._modules.join(', ')}];
 `;
-        fs.writeFileSync(`${this._dirDst}/src/modules/index.ts`, fileContent);
+        fsExtra.writeFileSync(`${this._dirDst}/src/modules/index.ts`, fileContent);
     }
 
 }
