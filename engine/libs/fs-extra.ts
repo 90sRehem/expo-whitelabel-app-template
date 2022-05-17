@@ -1,0 +1,1 @@
+export * as fsExtra from 'fs-extra';
