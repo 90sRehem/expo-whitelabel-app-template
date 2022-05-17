@@ -1,8 +1,11 @@
-import { Command } from 'commander';
-import { Builder } from './commands';
+import Commander from 'commander';
+import { Command, Task } from "entities"
 import { parseConfig } from './utils';
+import { FsExtra, Globby } from 'libs';
 
-const commander = new Command();
+const commander = new Commander.Command();
+const tasks = new Task(FsExtra, Globby);
+const commands = new Command(tasks);
 
 commander
     .command('build')
@@ -28,8 +31,7 @@ commander
             return;
         }
         const config = parseConfig(configPath);
-        const builder = new Builder(config, source, destination);
-        builder.Build();
+        commands.Build(config, source, destination)
     });
 
 commander.parse(process.argv);

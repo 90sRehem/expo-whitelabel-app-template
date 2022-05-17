@@ -1,1 +1,1 @@
-export * as fsExtra from 'fs-extra';
+export * as FsExtra from 'fs-extra';

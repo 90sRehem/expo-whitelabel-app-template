@@ -1,1 +1,1 @@
-export * as globby from 'globby';
+export * as Globby from 'globby';
