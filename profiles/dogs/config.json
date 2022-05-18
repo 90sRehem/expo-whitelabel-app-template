@@ -1,0 +1,12 @@
+{
+    "id": "dogs.app",
+    "name": "Cachorros",
+    "theme": "light",
+    "baseUrl": "http://localhost:6901",
+    "modules": [
+        "events",
+        "museums",
+        "hikes"
+    ],
+    "iconsPath": "./icons"
+}

@@ -1,0 +1,8 @@
+{
+    "id": "cats.app",
+    "name": "Cats",
+    "theme": "light",
+    "baseUrl": "http://localhost:6900",
+    "modules": [],
+    "iconsPath": "./icons"
+}
